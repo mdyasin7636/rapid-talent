@@ -1,8 +1,16 @@
-import React from "react";
-
-
+import React, { useEffect, useState } from "react";
+import JobCategory from "./JobCategory";
 
 const Home = () => {
+  
+  const [jobCategory, setJobCategory] = useState([]);
+
+  useEffect(()=>{
+    fetch('jobCategoryList.json')
+    .then(res=>res.json())
+    .then(data => setJobCategory(data))
+  }, [])
+  
   return (
     <div>
       <div className="banner-container flex flex-col md:flex-row items-center justify-center bg-indigo-50 px-16">
@@ -29,14 +37,17 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <div>
-        <h1>Job Category List</h1>
-        <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
+        <div className="text-center mt-10 pt-6">
+        <h1 className="text-4xl font-bold">Job Category List</h1>
+        <p className="text-zinc-600 font-medium mt-4">Explore thousands of job opportunities with all the information you need. Its your future</p>
         </div>
-        <div className="bg-indigo-50 ">
-            <img src="https://i.ibb.co/W34sKKB/social-media-1.png" alt="" />
-            <h3>Account & Finance</h3>
-            <p>300 Jobs Available</p>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-4 mt-6">
+            {
+              jobCategory.map(job => <JobCategory
+              key={job.id}
+              job={job}
+              ></JobCategory>)
+            }
         </div>
       </div>
     </div>
