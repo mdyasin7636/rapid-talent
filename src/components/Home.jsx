@@ -6,6 +6,7 @@ import FeaturedJobs from "./FeaturedJobs";
 const Home = () => {
   
   const [jobCategory, setJobCategory] = useState([]);
+  const [numFeaturedJobs, setNumFeaturedJobs] = useState(4);
 
   useEffect(()=>{
     fetch('/jobCategoryList.json')
@@ -60,15 +61,10 @@ const Home = () => {
         <p className="text-zinc-600 font-medium mt-4">Explore thousands of job opportunities with all the information you need. Its your future</p>
         </div>
         <div className="grid grid-cols-1 gap-4 mx-2 px-2 md:grid-cols-2 mt-6">
-          {
-            jobs.map(job => <FeaturedJobs
-            key={job.id}
-            job={job}
-            ></FeaturedJobs>)
-          }
+        {jobs.slice(0, numFeaturedJobs).map(job => <FeaturedJobs key={job.id} job={job}></FeaturedJobs>)}
         </div>
         <div className="text-center">
-        <button className="px-4 py-2 font-bold text-white bg-indigo-500 rounded-md hover:bg-indigo-600 mt-6 mb-6">See All Jobs</button>
+        {numFeaturedJobs < jobs.length ? <button className="px-4 py-2 font-bold text-white bg-indigo-500 rounded-md hover:bg-indigo-600 mt-6 mb-6" onClick={() => setNumFeaturedJobs(jobs.length)}>See All Jobs</button> : null}
         </div>
       </div>
     </div>
