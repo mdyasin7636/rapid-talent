@@ -4,9 +4,7 @@ import { useParams } from 'react-router-dom';
 const JobDetails = () => {
 
     const job = useParams()
-    console.log(job.id);
 
-    
 
     const [jobDetail, setJobDetail] = useState({})
     useEffect(()=> {
@@ -19,10 +17,33 @@ const JobDetails = () => {
     }, []);
 
     return (
-        <div>
-            <h2>name: {jobDetail.companyName}</h2>
+        <div className="flex mx-12 px-12 mt-12 mb-12">
+          <div className="w-3/4 p-4">
+            <div className="font-bold mb-2">Job Description:</div>
+            <div>{jobDetail.jobDescription}</div>
+            <div className="font-bold mt-4 mb-2">Job Responsibility:</div>
+            <div>{jobDetail.jobResponsibility}</div>
+            <div className="font-bold mt-4 mb-2">Educational Requirements:</div>
+            <div>{jobDetail.education}</div>
+            <div className="font-bold mt-4 mb-2">Experiences:</div>
+            <div>{jobDetail.experience}</div>
+          </div>
+          <div className="w-1/4 p-4 border rounded-lg pt-12 bg-indigo-50">
+            <div className="font-bold mb-2">Job Details</div>
+            <div className="font-bold mb-2">Salary: {jobDetail.salary} (Per Month)</div>
+            <div className="font-bold mb-2">Job Title: {jobDetail.jobTitle} </div>
+            <div className="font-bold mb-2">Contact Information</div>
+            <div>
+              <div className="mb-2">Phone: {jobDetail.phone}</div>
+              <div className="mb-2">Email: {jobDetail.email}</div>
+              <div className="mb-2">Address: {jobDetail.address}</div>
+            </div>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-full rounded mt-4">
+              Apply Now
+            </button>
+          </div>
         </div>
-    );
+      );
 };
 
 export default JobDetails;
