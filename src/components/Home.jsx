@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import JobCategory from "./JobCategory";
+import { useLoaderData } from "react-router-dom";
+import FeaturedJobs from "./FeaturedJobs";
 
 const Home = () => {
   
   const [jobCategory, setJobCategory] = useState([]);
 
   useEffect(()=>{
-    fetch('jobCategoryList.json')
+    fetch('/jobCategoryList.json')
     .then(res=>res.json())
     .then(data => setJobCategory(data))
   }, [])
+
+  const jobs = useLoaderData()
   
   return (
     <div>
@@ -37,7 +41,7 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <div className="text-center mt-10 pt-6">
+        <div className="text-center mb-10 mt-10 pt-6">
         <h1 className="text-4xl font-bold">Job Category List</h1>
         <p className="text-zinc-600 font-medium mt-4">Explore thousands of job opportunities with all the information you need. Its your future</p>
         </div>
@@ -48,6 +52,23 @@ const Home = () => {
               job={job}
               ></JobCategory>)
             }
+        </div>
+      </div>
+      <div>
+      <div className="text-center mb-10 mt-10 pt-6">
+        <h1 className="text-4xl font-bold">Featured Jobs</h1>
+        <p className="text-zinc-600 font-medium mt-4">Explore thousands of job opportunities with all the information you need. Its your future</p>
+        </div>
+        <div className="grid grid-cols-1 gap-4 mx-2 px-2 md:grid-cols-2 mt-6">
+          {
+            jobs.map(job => <FeaturedJobs
+            key={job.id}
+            job={job}
+            ></FeaturedJobs>)
+          }
+        </div>
+        <div className="text-center">
+        <button className="px-4 py-2 font-bold text-white bg-indigo-500 rounded-md hover:bg-indigo-600 mt-6 mb-6">See All Jobs</button>
         </div>
       </div>
     </div>
