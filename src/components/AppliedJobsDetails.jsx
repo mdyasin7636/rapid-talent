@@ -44,9 +44,11 @@ const AppliedJobsDetails = ({ d }) => {
         </div>
         <div className="flex-grow"></div>
         <div>
+          
           <button className="mt-2 px-3 py-2 font-medium text-white bg-indigo-500 rounded-md hover:bg-indigo-600">
             View Details
           </button>
+          
         </div>
       </div>
     </div>
