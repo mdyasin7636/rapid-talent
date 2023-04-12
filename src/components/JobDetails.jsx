@@ -37,14 +37,14 @@ const JobDetails = () => {
             <div>{jobDetail.experience}</div>
           </div>
           <div className="w-1/4 p-4 border rounded-lg pt-12 bg-indigo-50">
-            <div className="font-bold mb-2">Job Details</div>
-            <div><span className="font-bold mb-2">Salary:</span> {jobDetail.salary} (Per Month)</div>
-            <div><span className="font-bold mb-2">Job Title:</span> {jobDetail.jobTitle} </div>
-            <div className="font-bold mb-2">Contact Information</div>
+            <div className="font-bold mb-4 border-b">Job Details:</div>
+            <div className='mb-2'><span className="font-bold">Salary:</span> {jobDetail.salary} (Per Month)</div>
+            <div className='mb-2'><span className="font-bold">Job Title:</span> {jobDetail.jobTitle} </div>
+            <div className="font-bold mb-4 mt-4 border-b">Contact Information:</div>
             <div>
-              <div className="mb-2">Phone: {jobDetail.phone}</div>
-              <div className="mb-2">Email: {jobDetail.email}</div>
-              <div className="mb-2">Address: {jobDetail.address}</div>
+            <div className='mb-2'><span className="font-bold">Phone:</span> {jobDetail.phone} </div>
+            <div className='mb-2'><span className="font-bold">Email:</span> {jobDetail.email} </div>
+            <div className='mb-2'><span className="font-bold">Address:</span> {jobDetail.address} </div>
             </div>
             <button onClick={()=> handleApply()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-full rounded mt-4">
               Apply Now
