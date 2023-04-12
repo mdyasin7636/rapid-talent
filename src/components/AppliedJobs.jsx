@@ -30,6 +30,9 @@ const AppliedJobs = () => {
 
     return (
       <div>
+        <div className='bg-indigo-50 text-center p-12'>
+          <h1 className='text-2xl font-bold pb-4'>Applied Jobs</h1>
+          </div>
         {apply.map(d => <AppliedJobsDetails
           d={d}
           ></AppliedJobsDetails>

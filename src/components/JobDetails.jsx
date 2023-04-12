@@ -25,7 +25,11 @@ const JobDetails = () => {
 
 
     return (
-        <div className="flex mx-12 px-12 mt-12 mb-12">
+        <div>
+          <div className='bg-indigo-50 text-center p-12'>
+          <h1 className='text-2xl font-bold pb-4'>Job Details</h1>
+          </div>
+          <div className="flex mx-12 px-12 mt-12 mb-12">
           <div className="w-3/4 p-4">
             <div className="font-bold mb-2">Job Description:</div>
             <div>{jobDetail.jobDescription}</div>
@@ -50,6 +54,7 @@ const JobDetails = () => {
               Apply Now
             </button>
           </div>
+        </div>
         </div>
       );
 };
