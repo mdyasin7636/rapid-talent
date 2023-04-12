@@ -1,5 +1,6 @@
 import React from "react";
 import { MapPinIcon, CurrencyDollarIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const AppliedJobsDetails = ({ d }) => {
   const {
@@ -10,6 +11,7 @@ const AppliedJobsDetails = ({ d }) => {
     location,
     jobTime,
     salary,
+    id
   } = d;
 
   return (
@@ -45,9 +47,13 @@ const AppliedJobsDetails = ({ d }) => {
         <div className="flex-grow"></div>
         <div>
           
+          <Link to={`/jobDetails/${id}`}>
+
           <button className="mt-2 px-3 py-2 font-medium text-white bg-indigo-500 rounded-md hover:bg-indigo-600">
             View Details
           </button>
+          
+          </Link>
           
         </div>
       </div>

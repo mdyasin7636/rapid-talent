@@ -25,7 +25,7 @@ const FeaturedJobs = ({ job }) => {
           <p class="ml-1">Salary: {salary}</p>
         </div>
       </div>
-      <button onClick={()=> navigate(`jobDetails/${id}`)} className="mt-2 px-3 py-2 font-medium text-white bg-indigo-500 rounded-md hover:bg-indigo-600" >View Details</button>
+      <button onClick={()=> navigate(`/jobDetails/${id}`)} className="mt-2 px-3 py-2 font-medium text-white bg-indigo-500 rounded-md hover:bg-indigo-600" >View Details</button>
       
     </div>
   );
