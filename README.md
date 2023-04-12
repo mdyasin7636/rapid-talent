@@ -24,7 +24,6 @@ Here are some of the best features of my project:
 
 9. The header section has also a Blog link and there are shown Some question answers.
 
-10. 
 
 ## Live Link
 
