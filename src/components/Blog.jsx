@@ -9,7 +9,7 @@ const Blog = () => {
             Q: When should we use context API?
           </h1>
           <p className="text-lg font-medium text-teal-950">
-            Ans: We should use the React Context API when we need to share data between components that are not directly related to each other, to avoid prop drilling and simplify state management, especially in large-scale applications
+            Ans: We should use the React Context API when we need to share data between components that are not directly related to each other, to avoid prop drilling and simplify state management, especially in large-scale applications.
           </p>
         </div>
         <div className="mb-4 border p-4 rounded-md">
